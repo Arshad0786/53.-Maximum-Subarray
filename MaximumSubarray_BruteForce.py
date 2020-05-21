@@ -1,12 +1,8 @@
 class Solution:
     def maxSubArray(self, nums):
-        maxSum = int()
+        maxSum = - 9223372036854775806 #smallest integer posible
         for ScanSize in range(1, len(nums) + 1):
             for i in range(len(nums) - ScanSize + 1):
-
-                if (ScanSize == 1) and (i == 0):
-                    maxSum = self.SumOfPartArray(nums, i, i + ScanSize - 1)
-
                 if self.SumOfPartArray(nums, i, i + ScanSize - 1) > maxSum:
                     maxSum = self.SumOfPartArray(nums, i, i + ScanSize - 1)
 
